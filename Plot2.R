@@ -2,6 +2,8 @@
 # Read data into data.frame "a"
 # Change Vraiable Date to an R variable class "date"
 # Subset to dates of interest >= '2007-02-01' & <= '2007-02-02'
+#
+# No need to read table if data.frame b is available in main memory
 a <- read.table("household_power_consumption.txt", sep=";",  header=TRUE, na.strings = "?");
 a$Date <- as.Date(a$Date, format="%d/%m/%Y");
 b <- subset(a, Date >= '2007-02-01' & Date <= '2007-02-02');
